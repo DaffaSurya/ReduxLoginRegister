@@ -1,0 +1,38 @@
+.Regis {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: #555;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-family: sans-serif;
+    margin-top: 4px;
+    color: white;
+    font-weight: 600;
+}
+
+.input-regis {
+    height: 25px;
+    margin-top: 8px;
+}
+
+.button-regis {
+    background-color: #444;
+    color: white;
+    height: 30px;
+    border-color: #444;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: larger;
+}

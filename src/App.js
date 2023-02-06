@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { BrowserRouter, Route , Routes} from "react-router-dom";
+import Login from "./Pages/Login";
+import Discovery from "./Pages/Discovery";
+import Register from "./Pages/Register";
+import Homepage from "./Pages/Homepage";
+import Protectedroute from "./Hoc/Protectedroute";
+import Editcar from "./Pages/Editcar";
+import Create from "./Pages/Create";
+import Detailcar from "./Pages/Detailcar";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+      <Routes>
+      <Route element={<Protectedroute/>}>
+      <Route element={<Homepage/>} path={"/"}/>
+      <Route element={<Discovery/>} path={"/Discovery"}/>
+      <Route element={<Editcar/>} path={"/Editcar/:id"}/>
+      <Route element={<Create/>} path={"/Create"}/>
+      <Route element={<Detailcar/>} path={"/Detailcar/:id"}/>
+      </Route>
+      <Route element={<Login/>} path={"/login"}/>
+      <Route element={<Register/>} path={"/Register"}/>
+     </Routes>
+   </BrowserRouter>
   );
 }
-
+ 
 export default App;
